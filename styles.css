@@ -94,7 +94,7 @@ nav {
     max-width:1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
 }
 
@@ -120,14 +120,12 @@ nav ul {
 }
 
 nav ul li {
-    display: inline; 
     margin-right: 20px; 
 }
 
 nav ul li a {
     text-decoration: none;
     color: black;
-    text-align:right;
 }
 
 nav ul li a:hover {
@@ -157,10 +155,12 @@ nav ul li a:hover {
     color: #6030b1;
     margin: 0 12px;
     font-weight: bold;
+    justify-content: flex-start;
 }
 
 .text-purple {
     color: #6030b1;
+    justify-content: start;
 }
 
 /* ABOUT ME */
@@ -184,8 +184,8 @@ nav ul li a:hover {
     max-width: 600px;
     margin: 0 auto;
     text-align: center;
-}
 
+}
 .about-me__picture--mask {
     width: 100px;
     height: 100px;
@@ -193,6 +193,19 @@ nav ul li a:hover {
     overflow: hidden;
     box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     margin-bottom: 28px;
+    animation: animate-profile-picture 800ms 1s backwards;
+}
+
+@keyframes animate-profile-picture {
+    0% {
+        transform: scale 0;
+    }
+    80% {
+        transform scale (1,1);
+    }
+    100% {
+        transform: scale (1)
+    }
 }
 
 .about-me__picture {
@@ -265,6 +278,7 @@ padding-top: 8px;
     display: flex;
     width: 100%;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .language__name {
@@ -391,14 +405,15 @@ footer {
    justify-content: center;
 }
 
-.footer__social--list {
-    width: 100%;
-    max-width: 500px;
-    margin-bottom: 28px;
-    display: flex;
-    justify-content: space-around;
+ul li a {
+    color: white;
+    display: inline;
     justify-content: center;
+    text-decoration: none;
+}
 
+ul li a:hover {
+    text-decoration: underline;
 }
 
 .footer__social--link,
@@ -407,7 +422,23 @@ footer {
     color: #fff;]
     justify-content: space-around;
     justify-content: center;
+    margin-bottom:
+}
 
+.footer__social--list ul {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.footer__social--list li {
+    margin: 0 20px;
+}
+
+.footer__social--link,
+.footer__copyright,
+.footer__logo--popper {
+    color: #fff;
 }
 
 .footer__logo--popper {
@@ -429,7 +460,61 @@ footer {
 
 /* Small phones, tablets, large smartphones */
 @media (max-width: 768px) {
-    nav {
-        height: 68px;
+
+nav {
+    height: 68px;
+ }
+
+h1 {
+    font-size: 28px;
+}
+
+.about-me__info--para {
+    font-size: 18px;
+}
+
+.lanugage {
+    width: calc(100% / 3)
+}
+
+.project__decription--para {
+    font-size: 14px;
+}
+
+.project__decription {
+    left: 30px;
+    padding-right: 30px;
+}
+}
+
+/* SMALL PHONES */
+@media (max-width 480px) {
+
+    .nav__link:not(:last-child) {
+        display:none;
     }
+.project__decription {
+    padding: 0;
+    left: 0;
+    width: 100%
+}
+
+.project__decription--para {
+    display: none;
+}
+
+.project__decription--links {
+    display: flex;
+    justify-content: center;
+}
+
+.project__decription--title {
+    font-size: 32px;
+    line-height: 1;
+    text-align: center;
+}
+
+.project__decription--sub-title {
+    text-align: center;
+    margin: 12px 0;
 }
