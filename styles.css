@@ -34,14 +34,19 @@ a {
     content: "";
     position: absolute;
     height: 3px;
+    background-color: black;
     width: 0%;
-    bottom: -3pc;
+    bottom: -3px;
     right: 0;
     transition: all 300ms ease;
 }
 
 .link__hover-effect--white:after {
     background-color: #fff;
+}
+
+.link__hover-effect--black {
+    text-decoration: underline;
 }
 
 .link__hover-effect--black:after {
@@ -53,6 +58,7 @@ a {
     right: 0;
     text-decoration: underline;
 }
+
 li {
     list-style-type: none;
 }
@@ -387,4 +393,11 @@ footer {
 .footer__anchor:hover .footer__logo--popper {
     transform: translateX(60px);
     opacity: 1;
+}
+
+/* Small phones, tablets, large smartphones */
+@media (max-width: 768px) {
+    nav {
+        height: 68px;
+    }
 }
