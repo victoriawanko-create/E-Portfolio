@@ -34,13 +34,18 @@ a {
     content: "";
     position: absolute;
     height: 3px;
-    background-color: black;
-    width: 100%;
+    width: 0%;
     bottom: -3pc;
-    left: 0;
+    right: 0;
+    transition: all 300ms ease;
 }
+
 .link__hover-effect--white:after {
     background-color: #fff;
+}
+
+.link__hover-effect--black:after {
+    background-color: #000;
 }
 
 .link__hover-effect:hover:after {
@@ -326,6 +331,7 @@ padding-top: 8px;
 
 footer {
     background-color: #242424;
+    text-align: center;
 }
 
 .footer__logo {
@@ -353,6 +359,8 @@ footer {
     margin-bottom: 28px;
     display: flex;
     justify-content: space-around;
+    justify-content: center;
+
 }
 
 .footer__social--link,
@@ -360,6 +368,7 @@ footer {
 .footer__logo--popper {
     color: #fff;]
     justify-content: space-around;
+    justify-content: center;
 
 }
 
