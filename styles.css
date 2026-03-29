@@ -28,6 +28,12 @@ p {
 a {
     text-decoration: none;
     position: relative;
+    transition: opacity 300ms ease;
+}
+
+i:hover {
+    opacity: 0.7;
+
 }
 
 .link__hover--effect:after {
@@ -94,7 +100,7 @@ nav {
     max-width:1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -124,8 +130,9 @@ nav ul li {
 }
 
 nav ul li a {
-    text-decoration: none;
+    text-decoration: solid;
     color: black;
+    
 }
 
 nav ul li a:hover {
@@ -191,20 +198,20 @@ nav ul li a:hover {
     height: 100px;
     border-radius: 50%;
     overflow: hidden;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.16);
     margin-bottom: 28px;
-    animation: animate-profile-picture 800ms 1s backwards;
+    animation: animate-profile-picture 200ms 1s backwards;
 }
 
 @keyframes animate-profile-picture {
     0% {
-        transform: scale 0;
+        transform: scale(0);
     }
     80% {
-        transform scale (1,1);
+        transform: scale(1.1);
     }
     100% {
-        transform: scale (1)
+        transform: scale(1)
     }
 }
 
@@ -218,30 +225,73 @@ padding-top: 8px;
 
 .about-me__info--title {
     margin-bottom: 16px;
+    animation: fade-up 650ms backwards;
     padding: 30px;
 }
 
 .about-me__info--para {
     font-size: 20px;
     margin-bottom: 28px;
+    animation: fade-up 650ms backwards;
 }
 
-.about-me__link {
+.about-me__links {
     font-size: 20px;
     color: black;
+    animation: fade-up 650ms backwards;
     text-decoration: none;
     padding: 0 16px;
+    justify-content: space-between;
 }
 
+@keyframes fade-up {
+    0% {
+        opacity: 0%;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 100%;
+        transform: translateY(0);
+    }
+
+}
 .about-me__img--container {
     flex: 1;
     display: flex;
     align-items: center;
+    animation: fade-in 1200ms 800ms backwards;
 }
 
 .about-me__img {
     width: 80%;
     height: 80%;
+    animation: fade-in 1200ms 800ms backwards;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0%;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.wave {
+    display: inline-block;
+    animation: animate-wave 500ms infinite ease-in-out;
+}
+
+@keyframes animate-wave {
+    0% {
+        transform: rotate(0);
+    }
+    50% {
+        transform: rotate(30deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
 }
 
 /* TECH - STACK */
